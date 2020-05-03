@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  </head>
+  <body>
+        <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Password Generator</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'about' %}">About <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
+
+
+      <div class="jumbotron">
+        <h1>Password Generator</h1>
+      </div>
+    <form action="{% url 'password' %}">
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="inputState">Length of Password</label>
+            <select id="inputState" name="length" class="form-control">
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12" selected>12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+            </select>
+          </div>
+          <div class="form-group col-md-2">
+            <label for="upper">Uppercase</label>
+            <input type="checkbox" name="uppercase" class="form-control" id="upper">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="no">Number</label>
+            <input type="checkbox" name="numbers" class="form-control" id="no">
+          </div>
+          <div class="form-group col-md-2">
+            <label for="sc">Special Characters</label>
+            <input type="checkbox" name="special" class="form-control" id="sc">
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Generate Password</button>
+      </form>
+      </div>
+  </body>
+</html>
